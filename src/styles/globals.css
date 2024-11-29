@@ -2,20 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.f-text {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.3125rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.f-xs {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3125rem;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.f-s {
+  font-size: 1, 25rem;
+  font-weight: 700;
+  line-height: 1.625rem;
+}
+
+.f-m {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.9375rem;
+}
+
+.f-1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 4.4375rem;
+}
+
+.ol {
+  counter-reset: item;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.li {
+  display: block;
+  margin-bottom: 0.5em;
+  margin-left: 2em;
+}
+.li:before {
+  font-weight: 700;
+  display: inline-block;
+  content: counter(item) "";
+  counter-increment: item;
+  width: 2em;
+  margin-left: -2em;
 }

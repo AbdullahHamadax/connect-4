@@ -1,16 +1,21 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      sans: ["Space Grotesk"],
+    },
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        cDark: "#2e7cd6",
+        cLight: "#479dff",
+        cRed: "#fd6687",
+        cYellow: "#ffce67",
+      },
+      boxShadow: {
+        custom: "0 0.625rem 0 #000",
+        customActive: "0 0.3125rem 0 #000",
       },
     },
   },
