@@ -10,8 +10,8 @@ const spaceGrotesk = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "I hate CS",
-  description: "Fuck web dev and AI",
+  title: "Connect 4  game",
+  description: "A connect 4 game with AI implemented using minimax algorithm",
 };
 
 export default function RootLayout({
