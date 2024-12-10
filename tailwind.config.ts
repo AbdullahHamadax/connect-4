@@ -15,6 +15,13 @@ const config: Config = {
         "space-grotesk": ["var(--font-space-grotesk)", ...fontFamily.sans],
       },
 
+      fontSize: {
+        xs: ["1rem", "1.3125rem"],
+        sm: ["1.25rem", "1.625rem"],
+        lg: ["3.5rem", "4.4375rem"],
+        mm: ["1.5rem", "1.9375rem"],
+      },
+      
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
