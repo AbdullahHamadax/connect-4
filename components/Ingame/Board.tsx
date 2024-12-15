@@ -1,6 +1,7 @@
+import { useAppContext } from "@/context/AppContext";
 import Image from "next/image";
-import { useState } from "react";
-import { useAppContext } from "~/context/AppContext";
+import React, { useState } from "react";
+
 const Board = () => {
   const { isMobile, isPlayer1Turn, play } = useAppContext();
   let indicatorText = "";
@@ -18,54 +19,54 @@ const Board = () => {
   }
   const handleOnMouseMove = (event: React.MouseEvent<HTMLElement>) => {
     const currentTargetRect = event.currentTarget.getBoundingClientRect();
-    const event_offsetX = event.pageX - currentTargetRect.left;
+    const eventOffsetX = event.pageX - currentTargetRect.left;
     switch (true) {
-      case event_offsetX > 17 && 105 > event_offsetX:
+      case eventOffsetX > 17 && eventOffsetX < 105:
         setMarkerPosition("left-[calc(17px+88px*0)]");
         break;
-      case event_offsetX > 105 && 193 > event_offsetX:
+      case eventOffsetX > 105 && eventOffsetX < 193:
         setMarkerPosition("left-[calc(17px+88px*1)]");
         break;
-      case event_offsetX > 193 && 281 > event_offsetX:
+      case eventOffsetX > 193 && eventOffsetX < 281:
         setMarkerPosition("left-[calc(17px+88px*2)]");
         break;
-      case event_offsetX > 281 && 369 > event_offsetX:
+      case eventOffsetX > 281 && eventOffsetX < 369:
         setMarkerPosition("left-[calc(17px+88px*3)]");
         break;
-      case event_offsetX > 369 && 457 > event_offsetX:
+      case eventOffsetX > 369 && eventOffsetX < 457:
         setMarkerPosition("left-[calc(17px+88px*4)]");
         break;
-      case event_offsetX > 457 && 545 > event_offsetX:
+      case eventOffsetX > 457 && eventOffsetX < 545:
         setMarkerPosition("left-[calc(17px+88px*5)]");
         break;
-      case event_offsetX > 545 && 633 > event_offsetX:
+      case eventOffsetX > 545 && eventOffsetX < 633:
         setMarkerPosition("left-[calc(17px+88px*6)]");
         break;
     }
   };
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     const currentTargetRect = event.currentTarget.getBoundingClientRect();
-    const event_offsetX = event.pageX - currentTargetRect.left;
+    const eventOffsetX = event.pageX - currentTargetRect.left;
     switch (true) {
-      case event_offsetX > 17 && 105 > event_offsetX:
+      case eventOffsetX > 17 && eventOffsetX < 105:
         play(0);
         break;
-      case event_offsetX > 105 && 193 > event_offsetX:
+      case eventOffsetX > 105 && eventOffsetX < 193:
         play(1);
         break;
-      case event_offsetX > 193 && 281 > event_offsetX:
+      case eventOffsetX > 193 && eventOffsetX < 281:
         play(2);
         break;
-      case event_offsetX > 281 && 369 > event_offsetX:
+      case eventOffsetX > 281 && eventOffsetX < 369:
         play(3);
         break;
-      case event_offsetX > 369 && 457 > event_offsetX:
+      case eventOffsetX > 369 && eventOffsetX < 457:
         play(4);
         break;
-      case event_offsetX > 457 && 545 > event_offsetX:
+      case eventOffsetX > 457 && eventOffsetX < 545:
         play(5);
         break;
-      case event_offsetX > 545 && 633 > event_offsetX:
+      case eventOffsetX > 545 && eventOffsetX < 633:
         play(6);
         break;
     }
@@ -78,7 +79,6 @@ const Board = () => {
       onMouseMove={handleOnMouseMove}
       onClick={handleClick}
     >
-
       <Image
         src={
           isMobile
@@ -117,7 +117,7 @@ const Board = () => {
       </div>
       <div
         className={`absolute bottom-0 left-1/2 z-40 h-[9.375rem] w-[11.9375rem]
-      translate-x-[-50%] translate-y-[90%] py-[2.5rem] text-center
+      -translate-x-1/2 translate-y-[90%] py-10 text-center
       ${indicatorBg} bg-[length:11.9375rem_9.375rem]`}
       >
         <h3 className="text-xs font-bold">{indicatorText}</h3>
@@ -128,7 +128,7 @@ const Board = () => {
         alt="Active Column Marker"
         height={26}
         width={32}
-        className={`absolute ${markerPosition} top-0 hidden translate-x-[60%] translate-y-[-100%] lg:block`}
+        className={`absolute ${markerPosition} top-0 hidden -translate-y-full translate-x-[60%] lg:block`}
       />
     </div>
   );

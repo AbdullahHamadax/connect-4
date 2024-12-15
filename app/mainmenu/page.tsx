@@ -1,8 +1,7 @@
-"use client";
-
+// app/mainmenu/page.tsx
 import MainMenu from "@/components/MainMenu";
 
-const page = () => {
+const MainMenuPage = () => {
   return (
     <div>
       <MainMenu />
@@ -10,4 +9,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default MainMenuPage;

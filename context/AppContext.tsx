@@ -1,10 +1,11 @@
-import { createContext, useContext, useState } from "react";
+"use client";
+
+import { createContext, ReactNode, useContext, useState } from "react";
 type ContextType = {
   board: string[][];
   player1Score: number;
   player2Score: number;
   isPlayer1Turn: boolean;
-
   vsAi: boolean;
   isMobile: boolean;
   play: (column: number) => void;
@@ -22,14 +23,13 @@ const defaultState = {
 };
 const AppContext = createContext<ContextType>(defaultState);
 type PropsType = {
-  children: JSX.Element[] | JSX.Element;
+  children: ReactNode;
 };
 export const AppContextProvider = ({ children }: PropsType) => {
   const [board, setBoard] = useState<string[][]>([[], [], [], [], [], [], []]);
   const [player1Score, setPlayer1Score] = useState(15);
   const [player2Score, setPlayer2Score] = useState(23);
   const [isPlayer1Turn, setIsPlayer1Turn] = useState(false);
-  
   const [vsAi, setVsAi] = useState(false);
   const isMobile =
     typeof window !== "undefined" ? window.innerWidth < 640 : false;

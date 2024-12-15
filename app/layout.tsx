@@ -1,3 +1,4 @@
+import { AppContextProvider } from "@/context/AppContext";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -27,7 +28,7 @@ export default function RootLayout({
           spaceGrotesk.variable
         )}
       >
-        {children}
+        <AppContextProvider>{children}</AppContextProvider>
       </body>
     </html>
   );
