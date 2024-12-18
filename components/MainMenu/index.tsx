@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const MainMenu = () => {
-  const { startVsCPU, startVsPlayer } = useAppContext();
+  const { start } = useAppContext();
   return (
     <main className="flex min-h-screen items-center justify-center bg-cDark">
       <div
@@ -13,7 +13,7 @@ const MainMenu = () => {
       >
         <Image src="images/logo.svg" alt="logo" width={52} height={52} />
         <div className="relative flex size-full flex-col items-center">
-          onClick={startVsPlayer}
+          onClick={() => start(false)}
           <Link
             href="/ingame"
             className="absolute flex h-[4.5rem] w-full max-w-[25rem] items-center justify-between rounded-[1.25rem]
@@ -29,7 +29,7 @@ const MainMenu = () => {
             />
           </Link>
           <Link
-            onClick={startVsCPU}
+            onClick={() => start(true)}
             href="/ingame"
             className="absolute top-1/3 flex h-[4.5rem] w-full max-w-[25rem] items-center justify-between rounded-[1.25rem]
             border-[3px] border-black bg-cRed p-5 text-left text-mm font-bold shadow-custom

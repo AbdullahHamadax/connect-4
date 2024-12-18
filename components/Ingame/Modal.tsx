@@ -1,17 +1,13 @@
+import { useAppContext } from "@/context/AppContext";
 import Link from "next/link";
-const Modal = ({
-  modalActive,
-  toggleModal,
-}: {
-  modalActive: boolean;
-  toggleModal: () => void;
-}) => {
-  if (!modalActive) return <></>;
+const Modal = () => {
+  const { isPaused, togglePause, restart } = useAppContext();
+  if (!isPaused) return <></>;
   return (
     <>
       <div
         className="fixed inset-0 z-50 bg-[rgba(0,0,0,0.5)]"
-        onClick={toggleModal}
+        onClick={togglePause}
       />
       <div
         className="absolute left-1/2 top-1/2 z-50 flex h-[30.6875rem] w-[30rem]
@@ -22,7 +18,7 @@ const Modal = ({
         <h1 className="text-lg font-bold text-white">PAUSE</h1>
         <div className="relative flex size-full flex-col items-center gap-[1.875rem]">
           <button
-            onClick={toggleModal}
+            onClick={togglePause}
             className="absolute h-[4.5rem] w-full max-w-[25rem] items-center justify-between rounded-[1.25rem]
             border-[3px] border-black bg-white p-5 text-center text-mm font-bold shadow-custom
             transition-all hover:shadow-customHover active:mt-[0.3125rem] active:shadow-customActive"
