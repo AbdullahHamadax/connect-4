@@ -5,8 +5,8 @@ const Rules = () => {
     <main className="flex min-h-screen items-center justify-center bg-cDark">
       <div
         className="relative flex w-[30rem] flex-col gap-8
-  rounded-[2.5rem] bg-white p-8 sm:border-[3px]
-  sm:border-black sm:px-8 sm:shadow-custom"
+  rounded-[2.5rem] border-[3px] border-black bg-white
+  p-8 shadow-custom"
       >
         <h1 className="text-center text-lg font-bold">RULES</h1>
         <div className="flex flex-col gap-4">
@@ -33,10 +33,10 @@ const Rules = () => {
           </ol>
         </div>
         <Link
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2  rounded-full border-[3px] border-black bg-cRed  p-[0.1rem]"
           href="/"
         >
-          <Image src="images/check.svg" alt="Confirm" width={64} height={64} />
+          <Image src="/images/check.svg" alt="Confirm" width={64} height={64} />
         </Link>
       </div>
     </main>
