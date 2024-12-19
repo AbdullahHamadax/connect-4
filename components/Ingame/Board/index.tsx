@@ -6,7 +6,7 @@ import Marker from "./Marker";
 import TurnIndicator from "./TurnIndicator";
 
 const Board = () => {
-  const { isMobile, play, board } = useAppContext();
+  const { isMobile, play, board, vsCPU, isPlayer1Turn } = useAppContext();
 
   const [markerPosition, setMarkerPosition] = useState("lg:hidden");
 
@@ -40,53 +40,55 @@ const Board = () => {
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     const currentTargetRect = event.currentTarget.getBoundingClientRect();
     const eventOffsetX = event.pageX - currentTargetRect.left;
-    if (isMobile) {
-      switch (true) {
-        case eventOffsetX > 9 && eventOffsetX < 55.6:
-          play(0);
-          break;
-        case eventOffsetX > 55.6 && eventOffsetX < 102.2:
-          play(1);
-          break;
-        case eventOffsetX > 102.2 && eventOffsetX < 148.8:
-          play(2);
-          break;
-        case eventOffsetX > 148.8 && eventOffsetX < 195.4:
-          play(3);
-          break;
-        case eventOffsetX > 195.4 && eventOffsetX < 242:
-          play(4);
-          break;
-        case eventOffsetX > 242 && eventOffsetX < 288.6:
-          play(5);
-          break;
-        case eventOffsetX > 288.6 && eventOffsetX < 335.2:
-          play(6);
-          break;
-      }
-    } else {
-      switch (true) {
-        case eventOffsetX > 17 && eventOffsetX < 105:
-          play(0);
-          break;
-        case eventOffsetX > 105 && eventOffsetX < 193:
-          play(1);
-          break;
-        case eventOffsetX > 193 && eventOffsetX < 281:
-          play(2);
-          break;
-        case eventOffsetX > 281 && eventOffsetX < 369:
-          play(3);
-          break;
-        case eventOffsetX > 369 && eventOffsetX < 457:
-          play(4);
-          break;
-        case eventOffsetX > 457 && eventOffsetX < 545:
-          play(5);
-          break;
-        case eventOffsetX > 545 && eventOffsetX < 633:
-          play(6);
-          break;
+    if (!(vsCPU && !isPlayer1Turn)) {
+      if (isMobile) {
+        switch (true) {
+          case eventOffsetX > 9 && eventOffsetX < 55.6:
+            play(0);
+            break;
+          case eventOffsetX > 55.6 && eventOffsetX < 102.2:
+            play(1);
+            break;
+          case eventOffsetX > 102.2 && eventOffsetX < 148.8:
+            play(2);
+            break;
+          case eventOffsetX > 148.8 && eventOffsetX < 195.4:
+            play(3);
+            break;
+          case eventOffsetX > 195.4 && eventOffsetX < 242:
+            play(4);
+            break;
+          case eventOffsetX > 242 && eventOffsetX < 288.6:
+            play(5);
+            break;
+          case eventOffsetX > 288.6 && eventOffsetX < 335.2:
+            play(6);
+            break;
+        }
+      } else {
+        switch (true) {
+          case eventOffsetX > 17 && eventOffsetX < 105:
+            play(0);
+            break;
+          case eventOffsetX > 105 && eventOffsetX < 193:
+            play(1);
+            break;
+          case eventOffsetX > 193 && eventOffsetX < 281:
+            play(2);
+            break;
+          case eventOffsetX > 281 && eventOffsetX < 369:
+            play(3);
+            break;
+          case eventOffsetX > 369 && eventOffsetX < 457:
+            play(4);
+            break;
+          case eventOffsetX > 457 && eventOffsetX < 545:
+            play(5);
+            break;
+          case eventOffsetX > 545 && eventOffsetX < 633:
+            play(6);
+            break;
+        }
       }
     }
   };
