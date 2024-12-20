@@ -4,7 +4,7 @@ import MainMenu from "@/components/MainMenu";
 
 const page = () => {
   return (
-    <div>
+    <div className="flex min-h-screen items-center justify-center">
       <MainMenu />
     </div>
   );

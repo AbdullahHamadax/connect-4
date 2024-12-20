@@ -1,6 +1,6 @@
 "use client";
-
 import checkWinCondition from "@/lib/checkWinCondition";
+import minimax from "@/lib/minimax";
 import {
   createContext,
   ReactNode,
@@ -9,6 +9,7 @@ import {
   useEffect,
   useState,
 } from "react";
+
 type ContextType = {
   board: number[][];
   player1Score: number;
@@ -18,13 +19,14 @@ type ContextType = {
   gameOver: { winner: number; winningChips: string[] };
   player1Initiative: boolean;
   isPlayer1Turn: boolean;
-  vsCPU: boolean;
+  vsCPU: number;
   isMobile: boolean;
-  start: (vsCPU: boolean) => void;
+  start: (vsCPU: number) => void;
   play: (col: number) => void;
   restart: () => void;
   togglePause: () => void;
 };
+
 const defaultState = {
   board: [
     [0, 0, 0, 0, 0, 0],
@@ -37,18 +39,19 @@ const defaultState = {
   ],
   player1Score: 0,
   player2Score: 0,
-  isPlayer1Turn: true,
-  timer: 15,
+  timer: 30,
   isPaused: false,
   gameOver: { winner: 0, winningChips: [] },
   player1Initiative: true,
-  vsCPU: false,
+  isPlayer1Turn: true,
+  vsCPU: 0,
   isMobile: false,
-  start: function (_vsCPU: boolean) {},
+  start: function (_vsCPU: number) {},
   play: function (_col: number) {},
   restart: function () {},
   togglePause: function () {},
 };
+
 const AppContext = createContext<ContextType>(defaultState);
 
 type PropsType = {
@@ -72,7 +75,7 @@ export const AppContextProvider = ({ children }: PropsType) => {
   ]);
   const [player1Score, setPlayer1Score] = useState(0);
   const [player2Score, setPlayer2Score] = useState(0);
-  const [timer, setTimer] = useState(15);
+  const [timer, setTimer] = useState(30);
   const [isPaused, setIsPaused] = useState(false);
   const [gameOver, setGameOver] = useState<GameOverType>({
     winner: 0,
@@ -80,7 +83,7 @@ export const AppContextProvider = ({ children }: PropsType) => {
   });
   const [player1Initiative, setPlayer1Initiative] = useState(true);
   const [isPlayer1Turn, setIsPlayer1Turn] = useState(true);
-  const [vsCPU, setVsCPU] = useState(false);
+  const [vsCPU, setVsCPU] = useState(0);
   const isMobile =
     typeof window !== "undefined" ? window.innerWidth < 640 : false;
 
@@ -89,8 +92,8 @@ export const AppContextProvider = ({ children }: PropsType) => {
       if (board?.[col]?.[5] === 0 && !gameOver.winner) {
         setBoard((prev) => {
           const current = [...prev];
-          current[col] = [...prev[col]];
-          for (let row = 0; row < current?.[col].length; row++) {
+          current[col] = [...prev[col]] as number[];
+          for (let row = 0; row < current[col].length; row++) {
             if (current?.[col]?.[row] === 0) {
               current[col][row] = isPlayer1Turn ? 1 : 2;
               break;
@@ -99,20 +102,34 @@ export const AppContextProvider = ({ children }: PropsType) => {
           return [...current];
         });
         setIsPlayer1Turn((prev) => !prev);
-        setTimer(15);
+        setTimer(30);
       }
     },
     [board, gameOver.winner, isPlayer1Turn]
   );
+
   const cpuAction = useCallback(() => {
-    let col: number;
-    do {
-      col = Math.floor(Math.random() * 6);
-    } while (board?.[col]?.[5] !== 0);
+    // const bestMove = pickBestMove(board, 2);
+    let depth;
+    switch (vsCPU) {
+      case 1:
+        depth = 1;
+        break;
+      case 2:
+        depth = 4;
+        break;
+      case 3:
+        depth = 7;
+        break;
+      default:
+        depth = 7;
+        break;
+    }
+    const [bestMove] = minimax(board, depth, -Infinity, Infinity, true);
     setTimeout(() => {
-      play(col);
+      play(bestMove);
     }, 500);
-  }, [board, play]);
+  }, [board, play, vsCPU]);
 
   useEffect(() => {
     let interval: ReturnType<typeof setInterval>;
@@ -124,6 +141,7 @@ export const AppContextProvider = ({ children }: PropsType) => {
           ...prev,
           winner: 2,
         }));
+        setPlayer2Score((prev) => prev + 1);
       } else {
         setGameOver((prev) => ({
           ...prev,
@@ -144,13 +162,15 @@ export const AppContextProvider = ({ children }: PropsType) => {
         winningChips,
       });
       setPlayer1Initiative((prev) => !prev);
-      winner === 1
-        ? setPlayer1Score((prev) => prev + 1)
-        : setPlayer2Score((prev) => prev + 1);
+      if (winner !== 3) {
+        winner === 1
+          ? setPlayer1Score((prev) => prev + 1)
+          : setPlayer2Score((prev) => prev + 1);
+      }
     } else if (!isPlayer1Turn && vsCPU) cpuAction();
   }, [board, cpuAction, gameOver.winner, isPlayer1Turn, vsCPU]);
 
-  const start = (vsCPU: boolean) => {
+  const start = (vsCPU: number) => {
     setBoard([
       [0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0],
@@ -165,7 +185,7 @@ export const AppContextProvider = ({ children }: PropsType) => {
     setPlayer1Score(0);
     setPlayer2Score(0);
     setIsPaused(false);
-    setTimer(15);
+    setTimer(30);
     setGameOver({
       winner: 0,
       winningChips: [],
@@ -187,7 +207,7 @@ export const AppContextProvider = ({ children }: PropsType) => {
       [0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0],
     ]);
-    setTimer(15);
+    setTimer(30);
     setGameOver({
       winner: 0,
       winningChips: [],
@@ -218,4 +238,5 @@ export const AppContextProvider = ({ children }: PropsType) => {
     </AppContext.Provider>
   );
 };
+
 export const useAppContext = () => useContext(AppContext);

@@ -4,10 +4,10 @@ const TurnIndicator = () => {
   let indicatorText = "";
   let indicatorBg = "";
   if (isPlayer1Turn) {
-    indicatorText = "PLAYER 1'S TURN";
+    indicatorText = "Your TURN";
     indicatorBg = "bg-[url('/images/turn-background-red.svg')]";
   } else {
-    indicatorText = "PLAYER 2'S TURN";
+    indicatorText = "CPU's TURN";
     indicatorBg = "bg-[url('/images/turn-background-yellow.svg')]";
   }
   if (gameOver.winner)
@@ -18,7 +18,7 @@ const TurnIndicator = () => {
         border-black bg-white p-8 px-20 text-center shadow-custom"
       >
         <h3 className="text-xs font-bold">
-          {gameOver.winner === 1 ? "PLAYER 1" : "PLAYER 2"}
+          {gameOver.winner === 1 ? "PLAYER 1" : "CPU"}
         </h3>
         <h2 className="text-lg font-bold">WINS</h2>
         <button

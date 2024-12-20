@@ -20,8 +20,9 @@ const config: Config = {
         sm: ["1.25rem", "1.625rem"],
         lg: ["3.5rem", "4.4375rem"],
         mm: ["1.5rem", "1.9375rem"],
+        md: ["1.5rem", "1.9375rem"],
       },
-      
+
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -72,14 +73,20 @@ const config: Config = {
 
       boxShadow: {
         custom: "0 0.625rem 0 #000",
+        custom2: "0 0.3125rem 0 #000",
         customHover: "0 0.625rem 0 #5c2dd5",
-        customActive: "0 0.3125rem 0 #5c2dd5",
+        customHover2: "0 0.3125rem 0 #7945ff",
       },
 
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+
+      screens: {
+        tall: { raw: "(min-height: 760px)" },
+        desktopHover: { raw: "(hover: hover)" },
       },
     },
   },

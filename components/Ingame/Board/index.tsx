@@ -7,7 +7,6 @@ import TurnIndicator from "./TurnIndicator";
 
 const Board = () => {
   const { isMobile, play, board, vsCPU, isPlayer1Turn } = useAppContext();
-
   const [markerPosition, setMarkerPosition] = useState("lg:hidden");
 
   const handleOnMouseMove = (event: React.MouseEvent<HTMLElement>) => {
@@ -15,28 +14,29 @@ const Board = () => {
     const eventOffsetX = event.pageX - currentTargetRect.left;
     switch (true) {
       case eventOffsetX > 17 && eventOffsetX < 105:
-        setMarkerPosition("left-[calc(17px+88px*0)]");
+        setMarkerPosition("left-[calc(35px+88px*0)]");
         break;
       case eventOffsetX > 105 && eventOffsetX < 193:
-        setMarkerPosition("left-[calc(17px+88px*1)]");
+        setMarkerPosition("left-[calc(35px+88px*1)]");
         break;
       case eventOffsetX > 193 && eventOffsetX < 281:
-        setMarkerPosition("left-[calc(17px+88px*2)]");
+        setMarkerPosition("left-[calc(35px+88px*2)]");
         break;
       case eventOffsetX > 281 && eventOffsetX < 369:
-        setMarkerPosition("left-[calc(17px+88px*3)]");
+        setMarkerPosition("left-[calc(35px+88px*3)]");
         break;
       case eventOffsetX > 369 && eventOffsetX < 457:
-        setMarkerPosition("left-[calc(17px+88px*4)]");
+        setMarkerPosition("left-[calc(35px+88px*4)]");
         break;
       case eventOffsetX > 457 && eventOffsetX < 545:
-        setMarkerPosition("left-[calc(17px+88px*5)]");
+        setMarkerPosition("left-[calc(35px+88px*5)]");
         break;
       case eventOffsetX > 545 && eventOffsetX < 633:
-        setMarkerPosition("left-[calc(17px+88px*6)]");
+        setMarkerPosition("left-[calc(35px+88px*6)]");
         break;
     }
   };
+
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     const currentTargetRect = event.currentTarget.getBoundingClientRect();
     const eventOffsetX = event.pageX - currentTargetRect.left;
@@ -137,4 +137,5 @@ const Board = () => {
     </div>
   );
 };
+
 export default Board;

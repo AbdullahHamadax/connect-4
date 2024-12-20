@@ -1,8 +1,10 @@
 import { useAppContext } from "@/context/AppContext";
 import Link from "next/link";
+
 const Modal = () => {
   const { isPaused, togglePause, restart } = useAppContext();
   if (!isPaused) return <></>;
+
   return (
     <>
       <div
@@ -16,26 +18,30 @@ const Modal = () => {
       px-5 py-[1.875rem] shadow-custom sm:px-10 sm:py-[3.125rem]"
       >
         <h1 className="text-lg font-bold text-white">PAUSE</h1>
-        <div className="relative flex size-full flex-col items-center gap-[1.875rem]">
+        <div className="relative flex size-full flex-col items-center gap-6">
           <button
             onClick={togglePause}
-            className="absolute h-[4.5rem] w-full max-w-[25rem] items-center justify-between rounded-[1.25rem]
-            border-[3px] border-black bg-white p-5 text-center text-mm font-bold shadow-custom
-            transition-all hover:shadow-customHover active:mt-[0.3125rem] active:shadow-customActive"
+            className="w-full max-w-[25rem] items-center justify-between rounded-[1.25rem]
+            border-[3px] border-black bg-white p-5 text-center text-md font-bold shadow-custom
+            transition-all desktopHover:hover:border-cDark desktopHover:hover:shadow-customHover"
           >
             CONTINUE GAME
           </button>
           <button
-            className="absolute top-1/3 h-[4.5rem] w-full max-w-[25rem] rounded-[1.25rem]
-            border-[3px] border-black bg-white p-5 text-center text-mm font-bold shadow-custom
-            transition-all hover:shadow-customHover active:mt-[0.3125rem] active:shadow-customActive"
+            className="w-full max-w-[25rem] rounded-[1.25rem] border-[3px] border-black
+            bg-white p-5 text-center text-md font-bold shadow-custom
+            transition-all desktopHover:hover:border-cDark desktopHover:hover:shadow-customHover"
+            onClick={() => {
+              restart();
+              togglePause();
+            }}
           >
             RESTART
           </button>
           <Link
-            className="absolute top-2/3 h-[4.5rem] w-full max-w-[25rem] rounded-[1.25rem]
-           border-[3px] border-black bg-cRed p-5 text-center text-mm font-bold shadow-custom
-           transition-all hover:shadow-customHover active:mt-[0.3125rem] active:shadow-customActive"
+            className="w-full max-w-[25rem] rounded-[1.25rem] border-[3px]
+           border-black bg-cRed p-5 text-center text-md font-bold text-white shadow-custom
+           transition-all desktopHover:hover:border-cDark desktopHover:hover:shadow-customHover"
             href="/"
           >
             QUIT GAME
@@ -45,4 +51,5 @@ const Modal = () => {
     </>
   );
 };
+
 export default Modal;

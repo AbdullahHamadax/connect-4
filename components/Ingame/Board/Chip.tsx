@@ -1,6 +1,6 @@
+import { useAppContext } from "@/context/AppContext";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useAppContext } from "@/context/AppContext";
 
 const Chip = ({
   col,
@@ -100,7 +100,7 @@ const Chip = ({
             duration: 0.5,
             times: [0, 0.5, 1],
           }}
-          className="z-30 mb-[5px] h-[1.25rem] w-[1.25rem] rounded-[50%] border-[6px] border-white sm:h-[2.125rem] sm:w-[2.125rem]"
+          className="z-30 mb-[5px] size-5 rounded-[50%] border-[6px] border-white sm:size-[2.125rem]"
         />
       )}
       <Image
