@@ -1,0 +1,22 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 59" width="54" height="59">
+	<title>easy-svg</title>
+	<style>
+		.s0 { fill: #000000 } 
+		.s1 { mix-blend-mode: difference;fill: #008138 } 
+		.s2 { fill: none;stroke: #000000;stroke-width: 3 } 
+	</style>
+	<g id="Designs">
+		<g id="you">
+			<path id="Oval-Copy-21" class="s0" d="m27 54c14.9 0 27-12.1 27-27 0-14.9-12.1-27-27-27-14.9 0-27 12.1-27 27 0 14.9 12.1 27 27 27z"/>
+			<path id="Oval-Copy-40" class="s0" d="m27 59c14.9 0 27-12.1 27-27 0-14.9-12.1-27-27-27-14.9 0-27 12.1-27 27 0 14.9 12.1 27 27 27z"/>
+			<path id="Oval-Copy-11" class="s1" d="m27 51c13.3 0 24-10.7 24-24 0-13.3-10.7-24-24-24-13.3 0-24 10.7-24 24 0 13.3 10.7 24 24 24z"/>
+			<g id="Group-22">
+				<path id="Oval-Copy-11" fill-rule="evenodd" class="s2" d="m38.5 26.2c-0.3 6.6-6 11.7-12.6 11.3-6.6-0.3-11.7-5.9-11.3-12.6"/>
+				<g id="Group-7">
+					<path id="Path" fill-rule="evenodd" class="s2" d="m31.5 17v6"/>
+					<path id="Path-Copy" fill-rule="evenodd" class="s2" d="m21.5 17v6"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

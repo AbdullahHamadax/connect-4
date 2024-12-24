@@ -1,0 +1,26 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 59" width="54" height="59">
+	<title>you-svg</title>
+	<defs>
+		<image  width="45" height="16" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAQCAMAAAC1IAbbAAAAAXNSR0IB2cksfwAAAeNQTFRFAAAAJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJyczJyczJyczJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJyczJiYzJiYzJiYzJiYzJiYzJyczJyYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiYzJiY0Jyc1Jyc0JiYzKCg1JiY0JiYzJyc0Jyc0Jyc0KSk2JiYzJyc1Kio3Jyc0JiYzJyc0KSk2JiYzJyc0KCg2Jyc0Jyc0Kio4Jyc0JiYzJiYzJyc1KSk2Jyc0JiYzKCg1Jyc0Kio4JiY0Jyc0LS07Jyc0JiYzJiYzJiYzJiYzKCg1JiYzJiYzJiYzJiYzJiYzJyc0JiYzJiYzJiYzJiYzKSk2JiYzKSkzJiYzJyc0Jyc0JiYzJiYzJiYzKSgzJiYzJiYzJyc0JiYzJiYzJyc0KSk3JiYzKCgzJyczJyc0Jyc0JiYzJiYzJyYzJyYzJyYzJyczJiYzJiYzJyYzJiYzJiYzJiYzJyczJiYzJiYzJiYzJiYzJiYzJyczJiYzJyczKSgyJyczJiYzJiYzKCczJiYzJiYzJyczJyYzJiYzJiYzJyYzJyczJeW2/QAAAKF0Uk5TAAQ0cKvZ5/P1//f07Ny4bB41h8bj7fn88NCZXCAAf/HRdjIDDEeT6v7fPfL9zcDV+/iX7sYmnnkh8uhEV7citSkQxpoFQPpYBoPVHRLWg4Eh1nVlvhOfvQ8pOgio4kfpaTCN3RlhACaKV4QG08Qb1MMDBJ5D14GwWUngDkWcJchbo4kLTpHaHU88XTyMGRS3nTPOQwELcboNynQXNpDhpBUI7jjQAAABoklEQVR4nF2SSyhEURjHv/9ENp4bMmXUIK8VY6VmYUF5xEJZsEAReeTdJO/HZBoiwgJTlI0aWSCKhVKUElKkDIbVWDFkITN8Z+bemXudxf3+3+/8+5/vnC4I/9YbyQvRov+IxHv0T6iQL9DhlVQrjrGDKJnLs2ojkUm4xyf17Eh69Pq5XsMbdyzS7n658zglfzoMN6JmAtepYcClKi0LOKcc4EzqY/zZIQbgNJcDj5Xm2DTgKI/pYSC79IBLAbBf6I7a96qii4HtUmDnR+q95ajCJtcKey60e58SruC8XTcZE861iN/6kmhEGUANa2BZfZ9il81Uu0jNsLGoe0jCkkwbMAPq/GbedIWTwBiJJVNE2bdELTdw3gcGa7US55rmiNowF5y5A2aifruTugFr8BqmYeEesfD1XQji3kH+jLlsZDzxKC7d1y/c5nHVS9AAekWxrDvUfNgk3NYhFTTm9/jF1ICKZ1R2Cff08pMCRhStyuPrbMr0iXYSbprduAg8RxPQIjcLmA3+V9No9Ltp8nPTlxI5CtQrT18Bmn1CM48aLn8VFG55MjagwQAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		.s0 { fill: #000000 } 
+		.s1 { fill: #f4b925 } 
+		.s2 { fill: none;stroke: #000000;stroke-width: 3 } 
+	</style>
+	<g id="Designs">
+		<g id="you">
+			<path id="Oval-Copy-21" class="s0" d="m27 54c14.9 0 27-12.1 27-27 0-14.9-12.1-27-27-27-14.9 0-27 12.1-27 27 0 14.9 12.1 27 27 27z"/>
+			<path id="Oval-Copy-40" class="s0" d="m27 59c14.9 0 27-12.1 27-27 0-14.9-12.1-27-27-27-14.9 0-27 12.1-27 27 0 14.9 12.1 27 27 27z"/>
+			<path id="Oval-Copy-11" class="s1" d="m27 51c13.3 0 24-10.7 24-24 0-13.3-10.7-24-24-24-13.3 0-24 10.7-24 24 0 13.3 10.7 24 24 24z"/>
+			<g id="Group-22">
+				<path id="Oval-Copy-11" fill-rule="evenodd" class="s2" d="m39 30c0 6.6-5.4 12-12 12-6.6 0-12-5.4-12-12"/>
+				<g id="Group-7">
+					<path id="Path" class="s2" d="m31.5 17v6"/>
+					<path id="Path-Copy" class="s2" d="m21.5 17v6"/>
+				</g>
+			</g>
+		</g>
+		<use id="Layer 1" href="#img1" x="5" y="12"/>
+	</g>
+</svg>

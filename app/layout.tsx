@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "bg-cLight font-space-grotesk antialiase",
+          "bg-cbgBlue font-space-grotesk antialiase",
           spaceGrotesk.variable
         )}
       >

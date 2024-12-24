@@ -163,10 +163,17 @@ export const AppContextProvider = ({ children }: PropsType) => {
       });
       setPlayer1Initiative((prev) => !prev);
       if (winner !== 3) {
-        winner === 1
-          ? setPlayer1Score((prev) => prev + 1)
-          : setPlayer2Score((prev) => prev + 1);
-      }
+        const youWinSound = new Audio('/audio/mixkit-video-game-win-2016.wav');
+        const cpuWinSound = new Audio('/audio/mixkit-player-losing-or-failing-2042.wav');
+      
+        if (winner === 1) {
+          setPlayer1Score((prev) => prev + 1);
+          youWinSound.play();
+        } else {
+          setPlayer2Score((prev) => prev + 1);
+          cpuWinSound.play();
+        }
+      }      
     } else if (!isPlayer1Turn && vsCPU) cpuAction();
   }, [board, cpuAction, gameOver.winner, isPlayer1Turn, vsCPU]);
 

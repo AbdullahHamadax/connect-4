@@ -65,17 +65,24 @@ const config: Config = {
           "5": "hsl(var(--chart-5))",
         },
 
-        cDark: "#5c2dd5",
-        cLight: "#7945ff",
-        cRed: "#fd6687",
-        cYellow: "#ffce67",
-      },
+        cbgBlue: "#1C6DD0",
+        cbrEasy:"#008138",
+        cbrMedium:"#E5C600",
+        cbrHard:"#DE0000",
+        cButton: "#2CA58D",
+        cbrall:"#47A0E5",
+        cPlay:"#001D92",
+        cCpu:"#E60000",
+        cbar:"#47A0E5",
+        },
 
       boxShadow: {
         custom: "0 0.625rem 0 #000",
         custom2: "0 0.3125rem 0 #000",
-        customHover: "0 0.625rem 0 #5c2dd5",
-        customHover2: "0 0.3125rem 0 #7945ff",
+        customHoverE: "0 0.625rem 0 #008138",
+        customHoverM: "0 0.625rem 0 #E5C600",
+        customHoverH: "0 0.625rem 0 #DE0000",
+        customHoverR: "0 0.625rem 0 #47A0E5",
       },
 
       borderRadius: {

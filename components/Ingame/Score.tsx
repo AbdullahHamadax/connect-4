@@ -9,13 +9,28 @@ const Score = ({ player }: { player: number }) => {
   let score;
   switch (player) {
     case 1:
-      src = vsCPU ? "images/you.svg" : "images/player-one.svg";
-      text = vsCPU ? "YOU" : "PLAYER 1";
+      src = "/images/you-svg (1).svg";
+      text = "YOU";
       score = player1Score;
       break;
     case 2:
-      src = vsCPU ? "images/cpu.svg" : "images/player-two.svg";
-      text = vsCPU ? "CPU" : "PLAYER 2";
+      switch (vsCPU) {
+        case 1:
+          src = "/images/easy.svg";
+          text= "EASY CPU"
+          break;
+        case 2:
+          src = "/images/med.svg";
+          text= "MED CPU"
+          break;
+        case 3:
+          src = "/images/hard.svg";
+          text= "HARD CPU"
+          break;
+        default:
+          src=""
+          break;
+      }
       score = player2Score;
       break;
   }

@@ -17,10 +17,10 @@
                         <circle id="Oval-Copy-53" cx="13" cy="45" r="13"></circle>
                         <circle id="Oval-Copy-52" cx="45" cy="45" r="13"></circle>
                     </g>
-                    <circle id="Oval-Copy-11" fill="#FD6687" cx="13" cy="13" r="10"></circle>
-                    <circle id="Oval-Copy-25" fill="#FD6687" cx="45" cy="45" r="10"></circle>
-                    <circle id="Oval-Copy-23" fill="#FFCE67" cx="45" cy="13" r="10"></circle>
-                    <circle id="Oval-Copy-24" fill="#FFCE67" cx="13" cy="45" r="10"></circle>
+                    <circle id="Oval-Copy-11" fill="#0064DE" cx="13" cy="13" r="10"></circle>
+                    <circle id="Oval-Copy-25" fill="#0064DE" cx="45" cy="45" r="10"></circle>
+                    <circle id="Oval-Copy-23" fill="#E60000" cx="45" cy="13" r="10"></circle>
+                    <circle id="Oval-Copy-24" fill="#E60000" cx="13" cy="45" r="10"></circle>
                 </g>
             </g>
         </g>

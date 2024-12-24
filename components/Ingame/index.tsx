@@ -10,16 +10,17 @@ const Ingame = () => {
   let bgColor = "";
   switch (gameOver.winner) {
     case 0:
-      bgColor = "bg-cDark";
+      bgColor = "bg-cbar";
       break;
     case 1:
-      bgColor = "bg-cRed";
+      bgColor = "bg-cPlay";
       break;
     case 2:
-      bgColor = "bg-cYellow";
+      bgColor = "bg-cCpu";
       break;
   }
 
+  
   return (
     <>
       <Modal />
@@ -31,8 +32,8 @@ const Ingame = () => {
       justify-between py-4 tall:pb-14 tall:pt-8"
       >
         <button
-          className="w-[6.75rem] rounded-[1.25rem] bg-cDark py-2 text-xs
-        font-bold text-white transition-all hover:bg-cRed"
+          className="w-[6.75rem] rounded-[1.25rem] bg-cButton py-2 text-xs
+        font-bold text-white transition-all hover:bg-cbrall"
           onClick={togglePause}
         >
           MENU
@@ -41,8 +42,8 @@ const Ingame = () => {
           <Image src="images/logo.svg" alt="logo" fill />
         </div>
         <button
-          className="w-[6.75rem] rounded-[1.25rem] bg-cDark py-2 text-xs
-        font-bold text-white transition-all hover:bg-cRed"
+          className="w-[6.75rem] rounded-[1.25rem] bg-cButton py-2 text-xs
+        font-bold text-white transition-all hover:bg-cbrall"
           onClick={restart}
         >
           RESTART

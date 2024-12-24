@@ -1,0 +1,22 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 59" width="54" height="59">
+	<title>cpu-svg</title>
+	<style>
+		.s0 { fill: #000000 } 
+		.s1 { fill: #ffce67 } 
+		.s2 { fill: none;stroke: #000000;stroke-width: 3 } 
+	</style>
+	<g id="Designs">
+		<g id="cpu">
+			<path id="Oval-Copy-21" class="s0" d="m27 54c14.9 0 27-12.1 27-27 0-14.9-12.1-27-27-27-14.9 0-27 12.1-27 27 0 14.9 12.1 27 27 27z"/>
+			<path id="Oval-Copy-40" class="s0" d="m27 59c14.9 0 27-12.1 27-27 0-14.9-12.1-27-27-27-14.9 0-27 12.1-27 27 0 14.9 12.1 27 27 27z"/>
+			<path id="Oval-Copy-11" class="s1" d="m27 51c13.3 0 24-10.7 24-24 0-13.3-10.7-24-24-24-13.3 0-24 10.7-24 24 0 13.3 10.7 24 24 24z"/>
+			<g id="Group-8">
+				<g id="Group-10">
+					<path id="Path-Copy" class="s2" d="m29.5 18.5h6"/>
+					<path id="Path-Copy-2" class="s2" d="m18.5 18.5h6"/>
+					<path id="Path-2" class="s2" d="m15 25.5h24"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>
