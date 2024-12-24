@@ -5,7 +5,6 @@ import Link from "next/link";
 const MainMenu = () => {
   const { start } = useAppContext();
 
-  const levelSound =  new Audio('/audio/mixkit-game-level-completed-2059.wav');
   return (
     <div
       className="flex w-[30rem] flex-col items-center
@@ -16,6 +15,7 @@ const MainMenu = () => {
       <div className="relative flex size-full flex-col items-center gap-6">
         <Link
           onClick={() => {
+            const levelSound =  new Audio('/audio/mixkit-game-level-completed-2059.wav');
             levelSound.play();
             start(1);
           }}
@@ -34,6 +34,7 @@ const MainMenu = () => {
         </Link>
         <Link
           onClick={() => {
+            const levelSound =  new Audio('/audio/mixkit-game-level-completed-2059.wav');
             levelSound.play();
             start(2);
           }}
@@ -52,6 +53,7 @@ const MainMenu = () => {
         </Link>
         <Link
           onClick={() => {
+            const levelSound =  new Audio('/audio/mixkit-game-level-completed-2059.wav');
             levelSound.play();
             start(3);
           }}
