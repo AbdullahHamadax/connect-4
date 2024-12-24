@@ -17,18 +17,18 @@ const Score = ({ player }: { player: number }) => {
       switch (vsCPU) {
         case 1:
           src = "/images/easy.svg";
-          text= "EASY CPU"
+          text = "EASY CPU";
           break;
         case 2:
           src = "/images/med.svg";
-          text= "MED CPU"
+          text = "MED CPU";
           break;
         case 3:
           src = "/images/hard.svg";
-          text= "HARD CPU"
+          text = "HARD CPU";
           break;
         default:
-          src=""
+          src = "";
           break;
       }
       score = player2Score;

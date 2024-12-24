@@ -66,15 +66,15 @@ const config: Config = {
         },
 
         cbgBlue: "#1C6DD0",
-        cbrEasy:"#008138",
-        cbrMedium:"#E5C600",
-        cbrHard:"#DE0000",
+        cbrEasy: "#008138",
+        cbrMedium: "#E5C600",
+        cbrHard: "#DE0000",
         cButton: "#2CA58D",
-        cbrall:"#47A0E5",
-        cPlay:"#001D92",
-        cCpu:"#E60000",
-        cbar:"#47A0E5",
-        },
+        cbrall: "#47A0E5",
+        cPlay: "#001D92",
+        cCpu: "#E60000",
+        cbar: "#47A0E5",
+      },
 
       boxShadow: {
         custom: "0 0.625rem 0 #000",
