@@ -85,7 +85,7 @@ const TurnIndicator = () => {
         text-xs font-bold text-white transition-all hover:bg-cbrall"
           onClick={() => {
             const againSound = new Audio(
-              "/audio/Ah Shit Here We Go Again GTA - QuickSounds.com.mp3"
+              "/audio/mixkit-completion-of-a-level-2063.wav"
             );
             againSound.play();
             restart();
