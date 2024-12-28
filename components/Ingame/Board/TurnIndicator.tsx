@@ -14,6 +14,10 @@ const TurnIndicator = () => {
     indicatorBg = "bg-[url('/images/turn-background-red.svg')]";
   }
 
+  function randomInRange(min: number, max: number): number {
+    return Math.random() * (max - min) + min;
+  }
+
   useEffect(() => {
     if (gameOver.winner === 1) {
       const duration = 5000; // Confetti duration
@@ -24,10 +28,6 @@ const TurnIndicator = () => {
         ticks: 60,
         zIndex: 0,
       };
-
-      function randomInRange(min, max) {
-        return Math.random() * (max - min) + min;
-      }
 
       const interval = setInterval(() => {
         const timeLeft = animationEnd - Date.now();
